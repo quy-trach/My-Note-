@@ -1,0 +1,244 @@
+﻿body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.container-fluid {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.content-wrapper {
+    flex-grow: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+header .navbar-brand {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    header .navbar-brand img {
+        height: 30px;
+    }
+
+.toolbar-wrapper {
+    padding: 10px;
+}
+
+    .toolbar-wrapper .btn {
+        margin-right: 5px;
+        background-color: #ffc107;
+        color: white;
+        border: 1px solid transparent;
+    }
+
+        .toolbar-wrapper .btn#newBtn {
+            background-color: #007bff;
+        }
+
+        .toolbar-wrapper .btn#uploadBtn {
+            background-color: #28a745;
+        }
+
+        .toolbar-wrapper .btn#saveBtn {
+            background-color: #17a2b8;
+        }
+
+        .toolbar-wrapper .btn#downloadBtn {
+            background-color: #dc3545;
+        }
+
+        .toolbar-wrapper .btn#helpBtn {
+            background-color: #ff00d3;
+        }
+
+        .toolbar-wrapper .btn:hover,
+        .toolbar-wrapper .btn:focus {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .toolbar-wrapper .btn#newBtn:hover,
+        .toolbar-wrapper .btn#newBtn:focus {
+            color: #007bff;
+            background-color: #fff;
+            border: 1px solid #007bff;
+        }
+
+        .toolbar-wrapper .btn#uploadBtn:hover,
+        .toolbar-wrapper .btn#uploadBtn:focus {
+            color: #28a745;
+            background-color: #fff;
+            border: 1px solid #28a745;
+        }
+
+        .toolbar-wrapper .btn#saveBtn:hover,
+        .toolbar-wrapper .btn#saveBtn:focus {
+            color: #17a2b8;
+            background-color: #fff;
+            border: 1px solid #17a2b8;
+        }
+
+        .toolbar-wrapper .btn#downloadBtn:hover,
+        .toolbar-wrapper .btn#downloadBtn:focus {
+            color: #dc3545;
+            background-color: #fff;
+            border: 1px solid #dc3545;
+        }
+
+        .toolbar-wrapper .btn#helpBtn:hover,
+        .toolbar-wrapper .btn#helpBtn:focus {
+            color: #ff00d3;
+            background-color: #fff;
+            border: 1px solid #ff00d3;
+        }
+
+        .toolbar-wrapper .btn#openBtn:hover,
+        .toolbar-wrapper .btn#openBtn:focus {
+            color: #ffc107;
+            background-color: #fff;
+            border: 1px solid #ffc107;
+        }
+
+.content-wrapper #editor {
+    flex-grow: 1;
+    width: 100%;
+    resize: none;
+    padding: 10px;
+    font-family: monospace;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+    .content-wrapper #editor.numbered {
+        background: url('../images/numbered.png');
+        background-size: 39px auto;
+        background-attachment: local;
+        background-repeat: no-repeat;
+        padding-left: 61px;
+        padding-top: 15px;
+    }
+
+#statusBar {
+    height: 30px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e7e7e7;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+    #statusBar .status-icon {
+        display: flex;
+        align-items: center;
+    }
+
+    #statusBar .status-icon i {
+        margin-right: 5px;
+    }
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    transform: scale(1.25);
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.developer-info {
+    flex-grow: 1;
+    margin: 0;
+}
+
+.modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+/*#region filetree */
+#file-tree {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+    #file-tree ul {
+        list-style: none;
+        padding-left: 20px;
+        display: none;
+    }
+
+    #file-tree li > a {
+        text-decoration: none;
+    }
+
+    #file-tree li:hover > a {
+        font-weight: 600;
+    }
+
+    #file-tree li.folder {
+        position: relative;
+        cursor: pointer;
+        padding-left: 20px;
+    }
+
+    #file-tree li.file {
+        padding-left: 20px;
+        cursor: pointer;
+    }
+
+    #file-tree li.folder > a {
+        display: inline-block;
+        color: #000;
+    }
+
+        #file-tree li.folder > a:before {
+            content: "\f067 \00a0\f07b"; /* Trừ và icon folder */
+            font-family: "FontAwesome";
+            color: #ffc107; /* Màu vàng */
+            margin-right: 5px;
+        }
+
+    #file-tree li.folder.closed > a:before {
+        content: "\f067 \00a0\f07b"; /* Trừ và icon folder */
+        font-family: "FontAwesome";
+        color: #ffc107; /* Màu vàng */
+    }
+
+    #file-tree li.folder.open > a:before {
+        content: "\f068 \00a0\f07c"; /* Cộng và icon folder */
+        font-family: "FontAwesome";
+        color: #ffc107; /* Màu vàng */
+    }
+
+    #file-tree li.file > a:before {
+        content: "\f15c";
+        font-family: "FontAwesome";
+        color: #007bff; /* Màu xanh */
+        margin-right: 5px;
+    }
+
+    #file-tree li:hover > a {
+        font-weight: 600; /* In đậm khi hover lên */
+    }
+
+        #file-tree li:hover > a:before {
+            font-weight: normal; /* Khôi phục font-weight cho icon khi hover lên */
+        }
+
+    #file-tree li.file:hover {
+        text-decoration: none; /* Bỏ gạch chân khi hover vào file */
+    }
+
+/*#endregion */
+

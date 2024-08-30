@@ -1,0 +1,73 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\BackEnd-Dev\\MyNoteOnline\\MyNoteOnline\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MyNoteOnline.bundle.scp.css",
+      "PackagePath": "staticwebassets\\MyNoteOnline.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\BackEnd-Dev\\MyNoteOnline\\MyNoteOnline\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\BackEnd-Dev\\MyNoteOnline\\MyNoteOnline\\wwwroot\\assets\\images\\avatar-q.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\avatar-q.jpg"
+    },
+    {
+      "Id": "D:\\BackEnd-Dev\\MyNoteOnline\\MyNoteOnline\\wwwroot\\assets\\images\\avatar.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\avatar.jpg"
+    },
+    {
+      "Id": "D:\\BackEnd-Dev\\MyNoteOnline\\MyNoteOnline\\wwwroot\\assets\\images\\note-favicon.png",
+      "PackagePath": "staticwebassets\\assets\\images\\note-favicon.png"
+    },
+    {
+      "Id": "D:\\BackEnd-Dev\\MyNoteOnline\\MyNoteOnline\\wwwroot\\assets\\images\\numbered.png",
+      "PackagePath": "staticwebassets\\assets\\images\\numbered.png"
+    },
+    {
+      "Id": "D:\\BackEnd-Dev\\MyNoteOnline\\MyNoteOnline\\wwwroot\\assets\\js\\script.js",
+      "PackagePath": "staticwebassets\\assets\\js\\script.js"
+    },
+    {
+      "Id": "D:\\BackEnd-Dev\\MyNoteOnline\\MyNoteOnline\\wwwroot\\assets\\txt\\ANH LÀ CODER.txt",
+      "PackagePath": "staticwebassets\\assets\\txt\\ANH LÀ CODER.txt"
+    },
+    {
+      "Id": "D:\\BackEnd-Dev\\MyNoteOnline\\MyNoteOnline\\wwwroot\\assets\\txt\\LẬP TRÌNH VUI.txt",
+      "PackagePath": "staticwebassets\\assets\\txt\\LẬP TRÌNH VUI.txt"
+    },
+    {
+      "Id": "D:\\BackEnd-Dev\\MyNoteOnline\\MyNoteOnline\\wwwroot\\assets\\txt\\YÊU EM CHẲNG NGẠI FIREWALL.txt",
+      "PackagePath": "staticwebassets\\assets\\txt\\YÊU EM CHẲNG NGẠI FIREWALL.txt"
+    },
+    {
+      "Id": "D:\\BackEnd-Dev\\MyNoteOnline\\MyNoteOnline\\wwwroot\\assets\\txt\\tttt.txt",
+      "PackagePath": "staticwebassets\\assets\\txt\\tttt.txt"
+    },
+    {
+      "Id": "D:\\BackEnd-Dev\\MyNoteOnline\\MyNoteOnline\\wwwroot\\fdata\\data.txt",
+      "PackagePath": "staticwebassets\\fdata\\data.txt"
+    },
+    {
+      "Id": "D:\\BackEnd-Dev\\MyNoteOnline\\MyNoteOnline\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MyNoteOnline.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MyNoteOnline.props",
+      "PackagePath": "build\\MyNoteOnline.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MyNoteOnline.props",
+      "PackagePath": "buildMultiTargeting\\MyNoteOnline.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MyNoteOnline.props",
+      "PackagePath": "buildTransitive\\MyNoteOnline.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

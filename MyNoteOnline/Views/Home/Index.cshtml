@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Note Online</title>
+    <link rel="shortcut icon" href="assets/images/note-favicon.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <img src="/assets/images/note-favicon.png" />
+                    My Note Online
+                </a>
+            </nav>
+        </header>
+        <section class="toolbar-wrapper bg-light">
+            <div class="d-flex justify-content-start">
+                <button id="uploadBtn" class="btn btn-sm btn-upload me-2"><i class="fas fa-upload"></i> Upload</button>
+                <button id="openBtn" class="btn btn-sm btn-new me-2"><i class="far fa-folder-open"></i> Open</button>
+                <button id="saveBtn" class="btn btn-sm btn-save me-2"><i class="fas fa-save"></i> Save</button>
+                <button id="downloadBtn" class="btn btn-sm btn-download me-2"><i class="fas fa-download"></i> Download</button>
+                <button id="newBtn" class="btn btn-sm btn-new me-2"><i class="fas fa-file-circle-plus"></i> New</button>
+                <button id="helpBtn" class="btn btn-sm btn-new me-2"><i class="fa-regular fa-comments"></i> Help</button>
+            </div>
+            <input type="file" id="fileInput" class="d-none">
+        </section>
+        <section class="content-wrapper">
+            <textarea id="editor" class="form-control numbered"></textarea>
+        </section>
+        <footer id="statusBar">
+            <span id="charCount">Chars: 0</span>
+            <span id="lineCount">Lines: 0</span>
+            <span id="selectedCount">Selected: 0</span>
+            <span id="saveStatus" class="status-icon"><i class="fas fa-times-circle"></i> Unsaved</span>
+        </footer>
+
+        <!-- Help Modal -->
+        <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="helpModalLabel">Help & feedbacks</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex">
+                            <img src="assets/images/avatar-q.jpg" class="avatar me-3" alt="Avatar">
+                            <p class="developer-info">Hello, I am Quy Doan - the app owner. If you have any feedbacks, feel free to leave a comment below.</p>
+                        </div>
+                        <textarea id="feedback" class="form-control my-3" rows="3" placeholder="Enter your feedback"></textarea>
+                        <button id="sendFeedback" class="btn btn-primary float-end">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Open Modal -->
+        <div class="modal fade" id="openModal" tabindex="-1" aria-labelledby="openModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="openModalLabel">Please select a file</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul id="file-tree">
+                            <li class="folder folder-root closed">
+                                <a href="#" class="toggle" data-value="root" data-url="/root">Root</a>
+                                <ul>
+                                    <li class="folder closed">
+                                        <a href="#" class="toggle" data-value="folder1" data-url="/root/Folder-1">Folder 1</a>
+                                        <ul>
+                                            <li class="folder closed">
+                                                <a href="#" class="toggle" data-value="folder1-1" data-url="/root/Folder-1/Folder-1-1">Folder 1-1</a>
+                                                <ul>
+                                                    <li class="file">
+                                                        <a href="#" data-value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero." data-url="/root/Folder-1/Folder-1-1/File-1-1-1.txt">File 1-1-1.txt</a>
+                                                    </li>
+                                                    <li class="file">
+                                                        <a href="#" data-value="Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet." data-url="/root/Folder-1/Folder-1-1/File-1-1-2.txt">File 1-1-2.txt</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="folder closed">
+                                                <a href="#" class="toggle" data-value="folder1-2" data-url="/root/Folder-1/Folder-1-2">Folder 1-2</a>
+                                                <ul>
+                                                    <li class="file">
+                                                        <a href="#" data-value="Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus." data-url="/root/Folder-1/Folder-1-2/File-1-2-1.txt">File 1-2-1.txt</a>
+                                                    </li>
+                                                    <li class="file">
+                                                        <a href="#" data-value="Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt." data-url="/root/Folder-1/Folder-1-2/File-1-2-2.txt">File 1-2-2.txt</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="folder closed">
+                                        <a href="#" class="toggle" data-value="folder2" data-url="/root/Folder-2">Folder 2</a>
+                                        <ul>
+                                            <li class="file">
+                                                <a href="#" data-value="Praesent vitae arcu tempor neque lacinia pretium. Morbi imperdiet, mauris ac auctor dictum." data-url="/root/Folder-2/File-2-1.txt">File 2-1.txt</a>
+                                            </li>
+                                            <li class="file">
+                                                <a href="#" data-value="Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat." data-url="/root/Folder-2/File-2-2.txt">File 2-2.txt</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="file">
+                                        <a href="#" data-value="Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi." data-url="/root/File-1.txt">File 1.txt</a>
+                                    </li>
+                                    <li class="file">
+                                        <a href="#" data-value="Phasellus lacus. Etiam laoreet quam sed arcu." data-url="/root/File-2.txt">File 2.txt</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
